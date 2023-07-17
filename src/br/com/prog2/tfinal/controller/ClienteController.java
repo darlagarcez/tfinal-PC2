@@ -1,4 +1,4 @@
-package br.com.prog2.tfinel.controller;
+package br.com.prog2.tfinal.controller;
 
 import java.util.List;
 import br.com.prog2.tfinal.model.Cliente;

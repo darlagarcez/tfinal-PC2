@@ -7,24 +7,25 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 	public static Connection getConnection() {
 		String driver = "org.postgresql.Driver";
-		String user = "tfinal";/*Coloque o usuário criado para acesso ao banco*/
-		String senha = "123456";/*Coloque a senha para acesso ao banco*/
-		String url = "jdbc:postgresql://127.0.0.1:5449/tfinal";/*Coloque o
-		//servidor onde está instalado o banco*/
-		Connection con = null;
+		String user = "tfinal"; // o usuário criado para acesso ao banco
+		String senha = "123456"; // senha para acesso ao banco
+		String url = "jdbc:postgresql://127.0.0.1:5449/tfinal"; // servidor onde está instalado o banco
+		
+		Connection conexao = null;
+		
 		try {
 			Class.forName(driver);
-			con = (Connection)DriverManager.getConnection(url, user, senha);
+			conexao = (Connection)DriverManager.getConnection(url, user, senha);
 		} catch (ClassNotFoundException ex) {
 			System.err.print(ex.getMessage());
 		} catch (SQLException e) {
 			System.err.print(e.getMessage());
 		}
-		return con;
+		return conexao;
 	}
-	public static void close(Connection con){
+	public static void close(Connection conexao){
 		try {
-			con.close();
+			conexao.close();
 		} catch (SQLException e){}
 	}
 }

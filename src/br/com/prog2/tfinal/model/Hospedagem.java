@@ -6,8 +6,8 @@ import java.time.LocalDate;
 public class Hospedagem implements Serializable {
     private static final long serialVersionUID = 1L;
     private String codigo;
-    private String codChale;
     private String codCliente;
+    private String codChale;
     private String estado;
     private LocalDate dataInicio;
     private LocalDate dataFim;
